@@ -29,8 +29,8 @@ public class MainAppLoginpage extends BasePage implements LoginSystemPath{
     }
 // login to the MAIN, start point for the testing
     public void signIn(){
-        openLoginpage();
-        setElement(username,"EII-adm");
+
+        setElement(username,"EII_adm");
         setElement(password,"1111");
         clickElement(login);
     }
