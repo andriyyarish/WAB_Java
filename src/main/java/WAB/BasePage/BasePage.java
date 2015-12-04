@@ -1,4 +1,5 @@
 package WAB.BasePage;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,12 +29,21 @@ public class BasePage {
 
     public void clickElement(WebElement element){element.click();};
 
+
     // global setter for all Webelement objects
     public void setElement(WebElement element, String text){
         element.clear();
         element.sendKeys(text);
         Assert.assertEquals(element.getAttribute("value"), text);
     }
+
+    // start Search action by clicking on ENTER key
+    public void seatchByEnter (WebElement element){
+        element.click();
+        element.sendKeys(Keys.ENTER);
+    }
+
+
 
 
 

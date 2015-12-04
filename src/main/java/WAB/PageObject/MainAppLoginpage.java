@@ -30,8 +30,17 @@ public class MainAppLoginpage extends BasePage implements LoginSystemPath{
 // login to the MAIN, start point for the testing
     public void signIn(){
 
-        setElement(username,"EII_adm");
+        setElement(username,ADMIN_USER_CRED); // use credentials from LoginSystempath
         setElement(password,"1111");
         clickElement(login);
+    }
+    // open APP in separate PAGE
+    public APPStartPage openTargetApp(){
+        setPAGE_URL(ENV_BASEURL+APP_PAGE_SUFIX);
+        setPAGE_TITLE("Global Workflow App Builder");
+        loadPage();
+
+        return new APPStartPage(driver);
+
     }
 }
