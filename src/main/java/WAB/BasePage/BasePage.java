@@ -38,7 +38,7 @@ public class BasePage {
     }
 
     // start Search action by clicking on ENTER key
-    public void seatchByEnter (WebElement element){
+    public void searchByEnter(WebElement element){
         element.click();
         element.sendKeys(Keys.ENTER);
     }

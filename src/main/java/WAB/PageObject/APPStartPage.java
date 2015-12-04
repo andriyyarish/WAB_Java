@@ -33,7 +33,7 @@ public class APPStartPage extends BasePage {
 
     public void performSearchByEnter(String request){
         setElement(searchField,request);
-        seatchByEnter(searchField);
+        searchByEnter(searchField);
     }
 
     // Go to secondary Tabs Buttons

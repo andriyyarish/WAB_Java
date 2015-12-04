@@ -3,9 +3,12 @@ package WAB;
 import WAB.BasePage.LoginSystemPath;
 import WAB.PageObject.APPStartPage;
 import WAB.PageObject.MainAppLoginpage;
+import WAB.PageObject.NavigationBar;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -20,7 +23,7 @@ public class TestAPPStartPage {
         MainAppLoginpage mainAppLoginpage;
         LoginSystemPath loginSystemPath;
         APPStartPage appStartPage;
-
+        NavigationBar navigationBar;
         @BeforeTest
         public void setUp() {
             // set up browser
@@ -30,6 +33,7 @@ public class TestAPPStartPage {
             // initialize page factory: elements which declare as @FindBy
             mainAppLoginpage = PageFactory.initElements(driver, MainAppLoginpage.class);
             appStartPage = PageFactory.initElements(driver, APPStartPage.class);
+            navigationBar = PageFactory.initElements(driver,NavigationBar.class);
 
             // login to the system and start target application
             mainAppLoginpage.openLoginpage();
@@ -39,7 +43,8 @@ public class TestAPPStartPage {
 
         @Test
         public void searchWFByName(){
-            appStartPage.performSearchByClick("test");
+            navigationBar.navigateToMetrics();
+            Assert.assertEquals(driver.findElement(By.partialLinkText("Metrics")).isDisplayed(),true);
         }
 
 
