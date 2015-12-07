@@ -22,8 +22,9 @@ public class NavigationBar extends BasePage {
     @FindBy (css = "[title=\"Metrics\"]")  WebElement metricsButton ;
     public MetricsTab navigateToMetrics (){metricsButton.click(); return new MetricsTab();}
 
-
     @FindBy (css = "[title=\"Dashboards\"]")  WebElement dashboardsButton ;
+    public DashBoardsTab navigateToDashBoard (){dashboardsButton.click(); return new DashBoardsTab();}
+
     @FindBy(css = "[title=\"Reports\"]") WebElement reportsButton;
     @FindBy(css = "[title=\"Print\"]") WebElement printButton;
     @FindBy(css = "[title=\"Designer\"]") WebElement designerButton ;
