@@ -20,16 +20,22 @@ public class NavigationBar extends BasePage {
     @FindBy (css = "[title=\"Workflows\"]")  WebElement workflowsButton ;
 
     @FindBy (css = "[title=\"Metrics\"]")  WebElement metricsButton ;
-    public MetricsTab navigateToMetrics (){metricsButton.click(); return new MetricsTab();}
+    public MetricsTab navigateToMetrics (){metricsButton.click(); return new MetricsTab(driver);}
 
     @FindBy (css = "[title=\"Dashboards\"]")  WebElement dashboardsButton ;
-    public DashBoardsTab navigateToDashBoard (){dashboardsButton.click(); return new DashBoardsTab();}
+    public DashBoardsTab navigateToDashBoard (){dashboardsButton.click(); return new DashBoardsTab(driver);}
 
     @FindBy(css = "[title=\"Reports\"]") WebElement reportsButton;
-    @FindBy(css = "[title=\"Print\"]") WebElement printButton;
-    @FindBy(css = "[title=\"Designer\"]") WebElement designerButton ;
-    @FindBy(css = "[title=\"Help\"]") WebElement helpButton;
+    public ReportsTab navigateToReports(){reportsButton.click();return new ReportsTab(driver);}
 
+    @FindBy(css = "[title=\"Print\"]") WebElement printButton;
+    public PrintTab navigateToprint(){printButton.click();return new PrintTab(driver);}
+
+    @FindBy(css = "[title=\"Designer\"]") WebElement designerButton;
+    public DesignerTab navifateToDesigner(){designerButton.click();return new DesignerTab(driver);}
+
+    @FindBy(css = "[title=\"Help\"]") WebElement helpButton;
+    public HelpTab navigateToHelp(){ helpButton.click();return new HelpTab(driver);}
 
 
 
