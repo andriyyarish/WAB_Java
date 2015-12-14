@@ -1,6 +1,7 @@
-package WAB.PageObject;
+package WAB.PageObject.AppTabs;
 
 import WAB.BasePage.BasePage;
+import WAB.PageObject.NavigationBar;
 import org.openqa.selenium.WebDriver;
 
 /**
@@ -10,4 +11,12 @@ public class ReportsTab extends BasePage {
     public ReportsTab(WebDriver driver) {
         super(driver);
     }
+
+
+
+
+
+
+
+    public NavigationBar gotoNavigationBar(){return new NavigationBar(driver);}
 }

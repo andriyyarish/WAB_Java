@@ -1,4 +1,4 @@
-package WAB.PageObject;
+package WAB.PageObject.AppTabs;
 
 import WAB.BasePage.BasePage;
 import org.openqa.selenium.WebDriver;

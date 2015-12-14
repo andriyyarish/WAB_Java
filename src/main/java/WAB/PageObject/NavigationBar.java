@@ -1,6 +1,7 @@
 package WAB.PageObject;
 
 import WAB.BasePage.BasePage;
+import WAB.PageObject.AppTabs.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

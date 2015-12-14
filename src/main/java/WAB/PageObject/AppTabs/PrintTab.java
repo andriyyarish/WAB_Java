@@ -1,4 +1,4 @@
-package WAB.PageObject;
+package WAB.PageObject.AppTabs;
 
 import WAB.BasePage.BasePage;
 import org.openqa.selenium.WebDriver;
@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 /**
  * Created by yarish on 12/9/2015.
  */
-public class HelpTab extends BasePage{
-    public HelpTab(WebDriver driver) {
+public class PrintTab extends BasePage {
+    public PrintTab(WebDriver driver) {
         super(driver);
     }
 }

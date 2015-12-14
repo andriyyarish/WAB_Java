@@ -36,6 +36,7 @@ public class APPStartPage extends BasePage {
         searchByEnter(searchField);
     }
 
+    /*
     // Go to secondary Tabs Buttons
     @FindBy(css="[title=\"My Secondary WFs\"]") WebElement secondaryWFsButton;
     @FindBy(css="[title=\"New Workflow\"]") WebElement NewWFButton;
@@ -46,7 +47,7 @@ public class APPStartPage extends BasePage {
     @FindBy(css = "[title=\"Print\"]") WebElement PrintButton;
     @FindBy(css = "[title=\"Designer\"]") WebElement DesignerButton ;
     @FindBy(css = "[title=\"Help\"]") WebElement HelpButton;
-
+    */
 
 
 

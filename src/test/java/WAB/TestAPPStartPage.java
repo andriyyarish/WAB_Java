@@ -29,6 +29,7 @@ public class TestAPPStartPage {
             // set up browser
             this.driver = new FirefoxDriver();
             driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+            driver.manage().window().maximize();
 
             // initialize page factory: elements which declare as @FindBy
             mainAppLoginpage = PageFactory.initElements(driver, MainAppLoginpage.class);
@@ -39,12 +40,20 @@ public class TestAPPStartPage {
             mainAppLoginpage.openLoginpage();
             mainAppLoginpage.signIn();
             mainAppLoginpage.openTargetApp();
+
         }
 
         @Test
-        public void searchWFByName(){
+        public void checkLoadingApp(){
+
+            Assert.assertEquals(driver.findElement(By.partialLinkText("Workflows")).isDisplayed(), true);
+        }
+
+        @Test
+        public void goToMetrics(){
+
             navigationBar.navigateToMetrics();
-            Assert.assertEquals(driver.findElement(By.partialLinkText("Metrics")).isDisplayed(),true);
+            Assert.assertEquals(driver.findElement(By.partialLinkText("Metrics")).isDisplayed(), true);
         }
 
 
