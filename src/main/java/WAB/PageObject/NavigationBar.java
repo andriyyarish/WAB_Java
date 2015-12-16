@@ -33,7 +33,7 @@ public class NavigationBar extends BasePage {
     public PrintTab navigateToprint(){printButton.click();return new PrintTab(driver);}
 
     @FindBy(css = "[title=\"Designer\"]") WebElement designerButton;
-    public DesignerTab navifateToDesigner(){designerButton.click();return new DesignerTab(driver);}
+    public DesignerTab navigateToDesigner(){designerButton.click();return new DesignerTab(driver);}
 
     @FindBy(css = "[title=\"Help\"]") WebElement helpButton;
     public HelpTab navigateToHelp(){ helpButton.click();return new HelpTab(driver);}

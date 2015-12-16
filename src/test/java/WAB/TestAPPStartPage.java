@@ -2,6 +2,7 @@ package WAB;
 
 import WAB.BasePage.LoginSystemPath;
 import WAB.PageObject.APPStartPage;
+import WAB.PageObject.AppTabs.DesignerTab;
 import WAB.PageObject.MainAppLoginpage;
 import WAB.PageObject.NavigationBar;
 import org.openqa.selenium.By;
@@ -24,6 +25,7 @@ public class TestAPPStartPage {
         LoginSystemPath loginSystemPath;
         APPStartPage appStartPage;
         NavigationBar navigationBar;
+        DesignerTab designerTab;
         @BeforeTest
         public void setUp() {
             // set up browser
@@ -34,7 +36,7 @@ public class TestAPPStartPage {
             // initialize page factory: elements which declare as @FindBy
             mainAppLoginpage = PageFactory.initElements(driver, MainAppLoginpage.class);
             appStartPage = PageFactory.initElements(driver, APPStartPage.class);
-            navigationBar = PageFactory.initElements(driver,NavigationBar.class);
+          //  designerTab = PageFactory.initElements(driver,DesignerTab.class);
 
             // login to the system and start target application
             mainAppLoginpage.openLoginpage();
@@ -49,12 +51,21 @@ public class TestAPPStartPage {
             Assert.assertEquals(driver.findElement(By.partialLinkText("Workflows")).isDisplayed(), true);
         }
 
-        @Test
-        public void goToMetrics(){
-
-            navigationBar.navigateToMetrics();
-            Assert.assertEquals(driver.findElement(By.partialLinkText("Metrics")).isDisplayed(), true);
+        @Test (dependsOnMethods = "checkLoadingApp")
+        public void goToDesigner(){
+            navigationBar = PageFactory.initElements(driver,NavigationBar.class);
+            navigationBar.navigateToDesigner();
+            Assert.assertEquals(driver.findElement(By.name("designerTopFormType")).isDisplayed(), true);
         }
+
+    @Test (dependsOnMethods = "goToDesigner")
+    public void setWFinDesigner(){
+        // value should be parametrized and map to corresponding text (expected result in assertion) need to create Data provider class and set there list of Form Type
+        designerTab = PageFactory.initElements(driver,DesignerTab.class);
+        String formType = designerTab.selectFormType("3");
+        String stepName = designerTab.selectStepName("1");
+        Assert.assertEquals(stepName,"PrimaryWF. Step 2");
+    }
 
 
     }
